@@ -47,6 +47,8 @@ function chooseRandomPlayers() {
   const keys = Object.keys(characters);
   const first = keys[Math.floor(Math.random() * keys.length)];
   let second;
+
+  //Sorteia o segundo jogador até que não seja igual ao primeiro
   do {
     second = keys[Math.floor(Math.random() * keys.length)];
   } while (second === first);
@@ -152,6 +154,7 @@ async function playRaceEngine(character1, character2) {
       bold: "\x1b[1m",
     };
 
+    //Aqui em confrontos forma adicionadas melhorias como itens de confronto e ativação de turbo
     if (block === "CONFRONTO") {
       let powerResult1 = diceResult1 + character1.PODER;
       let powerResult2 = diceResult2 + character2.PODER;
